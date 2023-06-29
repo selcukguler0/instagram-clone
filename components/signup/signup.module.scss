@@ -8,8 +8,7 @@ $color: #6e6e6e;
 	flex-direction: column;
 	max-width: 270px;
 }
-//didnt use module css for components so when navigating to other pages, the css will not be applied for fix this issue added 's-' because login and sinup components are have same class names
-.s-signup-container {
+.signup-container {
 	border: 1px solid #ccc;
 	padding: 40px 50px;
 	display: flex;
@@ -53,7 +52,7 @@ $color: #6e6e6e;
 	}
 }
 
-.s-login-container {
+.login-container {
 	border: 1px solid #ccc;
 	padding: 20px 30px;
 	display: flex;

@@ -1,6 +1,11 @@
 import React from 'react'
+import styles from './signup.module.scss'
 
 export default function Footer() {
 	let year = new Date().getFullYear();
-	return <span className="footer">© {year} Instagram from Selçuk Güler</span>;
+	return (
+		<span className={styles["footer"]}>
+			© {year} Instagram from Selçuk Güler
+		</span>
+	);
 }

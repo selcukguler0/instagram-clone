@@ -2,12 +2,12 @@ import React from "react";
 import Link from "next/link";
 
 import Logo from "../instagram-logo";
-import "./signup.scss";
+import styles from "./signup.module.scss";
 
 export default function SignUp() {
 	return (
-		<div className="container">
-			<div className="s-signup-container">
+		<div className={styles["container"]}>
+			<div className={styles["signup-container"]}>
 				<Logo width={200} height={50} />
 				<form>
 					<input type="text" placeholder="Phone number or email" />
@@ -23,13 +23,16 @@ export default function SignUp() {
 				</form>
 			</div>
 
-			<div className="s-login-container">
-				<span>{"Have an account?"}</span> <Link className="a-tag" href="/login">Login</Link>
+			<div className={styles["login-container"]}>
+				<span>{"Have an account?"}</span>{" "}
+				<Link className={styles["a-tag"]} href="/login">
+					Login
+				</Link>
 			</div>
 
-			<div className="apps">
+			<div className={styles["apps"]}>
 				<span>Get the app.</span>
-				<div className="app-links">
+				<div className={styles["app-links"]}>
 					<a href="">
 						<img src="/appstore.png" alt="Download on the App Store" />
 					</a>
