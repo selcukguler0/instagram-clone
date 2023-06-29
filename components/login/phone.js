@@ -19,7 +19,6 @@ export default function Phone() {
 				setCurrentScreenshot(1);
 			}
 			setCurrentScreenshot((prev) => prev + 1);
-			console.log(currentScreenshot);
 		}, 5000);
 
 		return () => {

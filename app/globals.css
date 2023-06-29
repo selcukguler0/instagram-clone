@@ -3,4 +3,10 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: Roboto;
+}
+
+@font-face {
+	font-family: Roboto;
+	src: url(../public/Roboto-Medium.ttf);
 }
