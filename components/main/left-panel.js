@@ -1,5 +1,4 @@
 import Logo from "../instagram-logo";
-import { ImHome, ImSearch, ImCompass2, ImFilm } from "react-icons/im";
 import Create from "../icons/create";
 import Explore from "../icons/explore";
 import Home from "../icons/home";
