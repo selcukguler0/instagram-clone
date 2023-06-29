@@ -1,0 +1,93 @@
+$ig-link: rgb(0, 55, 107);
+$color: #6e6e6e;
+
+// signup panel
+.container {
+	display: flex;
+	flex-direction: column;
+	max-width: 270px;
+}
+//didnt use module css for components so when navigating to other pages, the css will not be applied for fix this issue added 's-' because login and sinup components are have same class names
+.s-signup-container {
+	border: 1px solid #ccc;
+	padding: 40px 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	form {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		margin-top: 20px;
+
+		input {
+			padding: 5px;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			background-color: #fafafac4;
+			min-width: 200px;
+
+			&::placeholder {
+				color: $color;
+				font-size: 11px;
+			}
+		}
+		button {
+			margin-top: 20px;
+			padding: 5px;
+			border-radius: 7px;
+			border: none;
+			background-color: #4cb5f9;
+			color: white;
+			cursor: pointer;
+		}
+	}
+
+	span {
+		text-align: center;
+		margin-top: 10px;
+		font-size: 9px;
+		color: $color;
+	}
+}
+
+.s-login-container {
+	border: 1px solid #ccc;
+	padding: 20px 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	margin-top: 10px;
+	font-size: 11.5px;
+
+	span {
+		margin-right: 5px;
+	}
+	.a-tag {
+		font-size: 11.5px;
+		text-decoration: none;
+		color: $ig-link;
+	}
+}
+
+.apps {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 15px;
+	font-size: 11px;
+
+	img {
+		width: 100%;
+		max-width: 100px;
+		margin: 10px 5px 0 0;
+	}
+}
+
+.footer {
+	color: $color;
+	font-size: 13px;
+	margin-bottom: 5px;
+}
