@@ -5,22 +5,8 @@ generator client {
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
-}
 
-model Post {
-  id          Int      @id @default(autoincrement())
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  content     String
-  likes       Int      @default(0)
-  description String
-  author      String
-}
-
-model Profile {
-  id     Int     @id @default(autoincrement())
-  bio    String?
-  userId Int     @unique
+	relationMode = "prisma"
 }
 
 model User {
@@ -29,4 +15,26 @@ model User {
   username String @unique
   password String
   fullname String
+  posts    Post[]
+  likes    Like[]
+}
+
+model Post {
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  content     String
+  likes       Like[]
+  description String?
+  author      String
+  userId      Int?
+  User        User?    @relation(fields: [userId], references: [id])
+}
+
+model Like {
+  id     Int  @id @default(autoincrement())
+  postId Int
+  userId Int
+  post   Post @relation(fields: [postId], references: [id])
+  user   User @relation(fields: [userId], references: [id])
 }
