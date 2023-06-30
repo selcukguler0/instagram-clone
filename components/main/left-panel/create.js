@@ -24,12 +24,8 @@ const customStyles = {
 };
 
 export default function Create({ modalIsOpen, setModalIsOpen }) {
-	const modalHandler = () => {
-		setModalIsOpen(!modalIsOpen);
-	};
 	return (
 		<>
-			<button onClick={modalHandler}>open modal</button>
 			<Modal style={customStyles} isOpen={modalIsOpen}>
 				<span className={styles.headerText}>Create new post</span>
 				<div className={styles.descriptionContainer}>
@@ -47,7 +43,7 @@ export default function Create({ modalIsOpen, setModalIsOpen }) {
 					<span>Drag your photos here</span>
 					<button>Select from computer</button>
 				</div>
-				<button onClick={modalHandler}>
+				<button onClick={() => setModalIsOpen(false)}>
 					<Close className={styles.close} />
 				</button>
 			</Modal>

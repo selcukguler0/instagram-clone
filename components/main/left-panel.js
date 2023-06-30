@@ -8,9 +8,9 @@ import Reels from "../icons/reels";
 import Search from "../icons/search";
 import Settings from "../icons/settings";
 
-import styles from "./main.module.scss"
+import styles from "./main.module.scss";
 
-export default function LeftPanel() {
+export default function LeftPanel({ setModalIsOpen }) {
 	return (
 		<div className={styles["left-panel"]}>
 			<div>
@@ -40,7 +40,7 @@ export default function LeftPanel() {
 						<Notification />
 						Notifications
 					</button>
-					<button>
+					<button onClick={() => setModalIsOpen(true)}>
 						<Create />
 						Create
 					</button>
