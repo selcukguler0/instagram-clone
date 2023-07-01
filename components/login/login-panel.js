@@ -1,5 +1,7 @@
 "use client";
 
+import { useSession } from "next-auth/react";
+import { signIn } from "next-auth/react";
 import { useState } from "react";
 import Logo from "../instagram-logo";
 import { useRouter } from "next/navigation";
@@ -12,6 +14,8 @@ import styles from "./login.module.scss";
 export default function Login() {
 	const router = useRouter();
 
+	const { data: session, status, update } = useSession();
+
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
@@ -22,17 +26,22 @@ export default function Login() {
 		setError("");
 		setLoading(true);
 		try {
-			const req = await axios.post("/api/login", {
+			const res = await signIn("credentials", {
 				username,
 				password,
+				callbackUrl: "http://localhost:3000", // redirect to home page after login
+				// redirect: false,
 			});
-			console.log(req);
-			if (req.data.status) {
-				router.push("/");
+			console.log(res);
+			console.log(session);
+			if (res?.error) {
+				setError(res.error);
+				setLoading(false);
+				return;
 			}
 		} catch (err) {
-			console.log(err.response.data.error);
-			setError(err.response.data.error);
+			console.log(err);
+			setError(err.response?.data.error);
 			setLoading(false);
 		}
 	};

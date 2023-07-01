@@ -28,7 +28,7 @@ model Post {
   likes       Like[]
   description String?
   userId      Int
-  User        User?    @relation(fields: [userId], references: [id])
+  user        User?    @relation(fields: [userId], references: [id])
 }
 
 model Like {

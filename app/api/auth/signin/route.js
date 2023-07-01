@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
@@ -7,7 +8,7 @@ const isMail = (email) => {
 	return regex.test(email);
 };
 
-export async function POST(request) {
+export async function POST(request, respond) {
 	const res = await request.json();
 	const { username, email, password } = res;
 
@@ -43,7 +44,7 @@ export async function POST(request) {
 						{ status: 401 }
 					);
 				}
-				return NextResponse.json({ status: true });
+				return NextResponse.json({ status: true, user });
 			}
 			return NextResponse.json(
 				{
@@ -73,7 +74,7 @@ export async function POST(request) {
 					{ status: 401 }
 				);
 			}
-			return NextResponse.json({ status: true });
+			return NextResponse.json({ status: true, user });
 		}
 		return NextResponse.json(
 			{ status: false, error: "User not found" },

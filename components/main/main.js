@@ -12,7 +12,7 @@ import Loading from "../Loading";
 
 import axios from "axios";
 
-export default function Main() {
+export default function Main({ userData: { name, email, image } }) {
 	const [posts, setPosts] = useState([]);
 	const [loading, setLoading] = useState(false);
 
@@ -72,10 +72,10 @@ export default function Main() {
 								<div className={styles["post-user"]}>
 									<img
 										className={styles["post-avatar"]}
-										src="/avatar.jpeg"
+										src={post.user.profilePic}
 										alt=""
 									/>
-									<span>{post.author}</span>
+									<span>{post.user.username}</span>
 								</div>
 								<More />
 							</div>
@@ -102,7 +102,7 @@ export default function Main() {
 										</button>
 									</div>
 									<div className={styles["post-actions-right"]}>
-										<button disabled> 
+										<button disabled>
 											<Save />
 										</button>
 									</div>

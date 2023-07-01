@@ -23,6 +23,15 @@ export async function GET(req) {
 						id: true,
 					},
 				},
+				user: {
+						// where: {
+						// 	userId: parseInt(userId),
+						// },
+						select: {
+							profilePic: true,
+							username: true,
+						},
+					},
 				_count: {
 					select: {
 						likes: true,

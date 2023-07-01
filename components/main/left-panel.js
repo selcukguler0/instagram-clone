@@ -10,7 +10,10 @@ import Settings from "../icons/settings";
 
 import styles from "./main.module.scss";
 
-export default function LeftPanel({ setModalIsOpen }) {
+export default function LeftPanel({
+	setModalIsOpen,
+	userData: { name, email, image },
+}) {
 	return (
 		<div className={styles["left-panel"]}>
 			<div>
@@ -45,7 +48,7 @@ export default function LeftPanel({ setModalIsOpen }) {
 						Create
 					</button>
 					<button>
-						<img src="/avatar.jpeg" alt="" />
+						<img src={image} alt="" />
 						Profile
 					</button>
 				</div>

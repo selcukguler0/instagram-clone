@@ -1,12 +1,11 @@
-import "./globals.css";
-import { NextAuthProvider } from "./auth-provider";
+import { NextAuthProvider } from "../../auth-provider";
 
 export const metadata = {
 	title: "Instagram",
 	description: "Instagram Clone",
 };
 
-export default function RootLayout({ children }) {
+export default function LoginLayout({ children }) {
 	return (
 		<NextAuthProvider>
 			<html lang="en">

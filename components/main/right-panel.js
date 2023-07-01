@@ -1,13 +1,15 @@
 import styles from "./main.module.scss";
 
-export default function RightPanel() {
+export default function RightPanel({
+	userData: { name, email, image },
+}) {
 	return (
 		<div className={styles["right-panel"]}>
 			<div className={styles["header"]}>
 				<div className={styles["user"]}>
-					<img src="/avatar.jpeg" alt="" />
+					<img src={image} alt="" />
 					<div className={styles["user-info"]}>
-						<span className={styles["username"]}>username</span>
+						<span className={styles["username"]}>{name}</span>
 						<span className={styles["fullname"]}>fullname</span>
 					</div>
 				</div>
