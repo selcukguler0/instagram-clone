@@ -80,7 +80,7 @@ export default function Main() {
 								<More />
 							</div>
 							<div className={styles["post-body"]}>
-								<img src={`/posts/${post.content}`} alt="" />
+								<img src={`${post.content}`} alt="" />
 							</div>
 							<div className={styles["post-footer"]}>
 								<div className={styles["post-actions"]}>
