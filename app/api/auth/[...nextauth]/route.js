@@ -7,8 +7,11 @@ export const authOptions = {
 		strategy: "jwt",
 	},
 	pages: {
-		signIn: "/auth/signin",
-	},
+    signIn: '/auth/signin',
+    error: '/auth/error', // Error code passed in query string as ?error=
+    verifyRequest: '/auth/verify-request', // (used for check email message)
+    newUser: '/auth/new-user' // New users will be directed here on first sign in (leave the property out if not of interest)
+  },
 	providers: [
 		CredentialsProvider({
 			id: "credentials",
@@ -22,6 +25,7 @@ export const authOptions = {
 					console.log(data.user);
 					console.log(data.user.id);
 					return {
+						id: data.user.id,
 						name: data.user.username,
 						email: data.user.email,
 						image: data.user.profilePic,

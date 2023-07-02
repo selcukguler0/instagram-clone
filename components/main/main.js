@@ -12,14 +12,14 @@ import Loading from "../Loading";
 
 import axios from "axios";
 
-export default function Main({ userData: { name, email, image } }) {
+export default function Main({ user }) {
 	const [posts, setPosts] = useState([]);
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
 		setLoading(true);
 		axios
-			.get("/api/get-posts?userId=1") //TODO change userId
+			.get(`/api/get-posts?userId=${user.id}`)
 			.then((res) => {
 				console.log("posts", res.data.posts);
 				setPosts(res.data.posts);
@@ -46,7 +46,7 @@ export default function Main({ userData: { name, email, image } }) {
 		//save "like" to db
 		axios
 			.post("/api/like-post", {
-				userId: 1, //TODO change userId
+				userId: user.id,
 				postId: id,
 			})
 			.then((res) => {

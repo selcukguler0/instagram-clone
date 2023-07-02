@@ -8,12 +8,11 @@ import Reels from "../icons/reels";
 import Search from "../icons/search";
 import Settings from "../icons/settings";
 
+import { signOut } from "next-auth/react";
+
 import styles from "./main.module.scss";
 
-export default function LeftPanel({
-	setModalIsOpen,
-	userData: { name, email, image },
-}) {
+export default function LeftPanel({ setModalIsOpen, user }) {
 	return (
 		<div className={styles["left-panel"]}>
 			<div>
@@ -48,12 +47,13 @@ export default function LeftPanel({
 						Create
 					</button>
 					<button>
-						<img src={image} alt="" />
+						<img src={user.profilePic} alt="" />
 						Profile
 					</button>
 				</div>
 			</div>
 			<button>
+				<button onClick={() => signOut()}>Sign out</button>
 				<Settings />
 				More
 			</button>
