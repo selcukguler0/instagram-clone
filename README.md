@@ -4,6 +4,8 @@ Another Instagram Clone
 
 #### TODOS:
 
+- [X] Share Post
+- [X] Like Post
 - [] Live post update
 - [] Messaging
 - [] Notifications
