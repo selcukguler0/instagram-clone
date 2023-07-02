@@ -42,6 +42,12 @@ Install necessary packages
   npm install
 ```
 
+Run a migration to create your database tables with Prisma Migrate
+
+```bash
+  npx prisma migrate dev 
+```
+
 Start server
 
 ```bash
