@@ -65,6 +65,8 @@ export default function Create({ modalIsOpen, setModalIsOpen, user }) {
 			setModalIsOpen(false);
 		} catch (error) {
 			console.error("something went wrong, check your console.");
+		}finally{
+			window.location.reload(); // TODO - add live post update
 		}
 	};
 
