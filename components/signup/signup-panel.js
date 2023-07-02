@@ -90,7 +90,7 @@ export default function SignUp() {
 
 			<div className={styles["login-container"]}>
 				<span>{"Have an account?"}</span>{" "}
-				<Link className={styles["a-tag"]} href="/login">
+				<Link className={styles["a-tag"]} href="/auth/signin">
 					Login
 				</Link>
 			</div>

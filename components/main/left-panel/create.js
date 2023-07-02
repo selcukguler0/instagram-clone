@@ -24,7 +24,7 @@ const customStyles = {
 	},
 };
 
-export default function Create({ modalIsOpen, setModalIsOpen }) {
+export default function Create({ modalIsOpen, setModalIsOpen, user }) {
 	const fileInputRef = useRef(null);
 	const [postDescription, setPostDescription] = useState("");
 	const [post, setPost] = useState(null);
@@ -44,7 +44,7 @@ export default function Create({ modalIsOpen, setModalIsOpen }) {
 		console.log(file);
 		const formData = new FormData();
 		formData.append("file", file);
-		formData.append("userId", 1); // TODO - get user id from request body
+		formData.append("userId", user.id);
 		formData.append("description", postDescription);
 
 		try {

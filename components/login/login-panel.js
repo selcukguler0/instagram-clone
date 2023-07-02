@@ -76,7 +76,7 @@ export default function Login() {
 
 			<div className={styles["signup-container"]}>
 				<span>{"Don't have an account?"}</span>{" "}
-				<Link className={styles["a-tag"]} href="/signup">
+				<Link className={styles["a-tag"]} href="/auth/signup">
 					Sign up
 				</Link>
 			</div>

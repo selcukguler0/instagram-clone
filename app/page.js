@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
-import { getSession, useSession } from "next-auth/react";
-import { redirect } from "next/navigation";
+import { useState, useEffect } from "react";
+import { getSession } from "next-auth/react";
 
 import LeftPanel from "@/components/main/left-panel";
 import Main from "@/components/main/main";
@@ -13,6 +12,7 @@ import styles from "./page.module.scss";
 
 // import useUser from "@/utils/hooks/useUser";
 import getUser from "@/utils/getUser";
+import FullPageLoading from "@/components/FullPageLoading";
 
 export default function Home() {
 	const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -29,7 +29,7 @@ export default function Home() {
 	}, []);
 
 	if (!user) {
-		return null;
+		return <FullPageLoading />;
 	}
 
 	return (

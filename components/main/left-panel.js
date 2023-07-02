@@ -43,7 +43,7 @@ export default function LeftPanel({ setModalIsOpen, user }) {
 						Notifications
 					</button>
 					<button onClick={() => setModalIsOpen(true)}>
-						<Create />
+						<Create user={user} />
 						Create
 					</button>
 					<button>
