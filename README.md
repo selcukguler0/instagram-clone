@@ -4,16 +4,16 @@ Another Instagram Clone
 
 #### TODOS:
 
-- [X] Share Post
-- [X] Like Post
-- [] Live post update
-- [] Messaging
-- [] Notifications
-- [] Search Page
-- [] Explore Page
-- [] Profile Page
-- [] Reels Page
-- [] Follow/Unfollow
+- [X]  Share Post
+- [X]  Like Post
+- [ ]  Live post update
+- [ ]  Messaging
+- [ ]  Notifications
+- [ ]  Search Page
+- [ ]  Explore Page
+- [ ]  Profile Page
+- [ ]  Reels Page
+- [ ]  Follow/Unfollow
 
 ## Used Technologies
 
