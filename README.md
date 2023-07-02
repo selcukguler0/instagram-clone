@@ -1,11 +1,17 @@
-
 # Next.js Instagram Clone
 
 Another Instagram Clone
 
-TODOS:
+#### TODOS:
 
-
+- [] Live post update
+- [] Messaging
+- [] Notifications
+- [] Search Page
+- [] Explore Page
+- [] Profile Page
+- [] Reels Page
+- [] Follow/Unfollow
 
 ## Used Technologies
 
@@ -14,7 +20,6 @@ TODOS:
 - Prisma
 - MySQL
 
-  
 ## Usage
 
 Clone project
@@ -41,9 +46,8 @@ Start server
   npm run dev
 ```
 
-  
 ## Screenshots
 
-![Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
-  
+![Screenshot](https://github.com/selcukguler0/instagram-clone/blob/master/readme-screenshots/1.png?raw=true)
+![Screenshot](https://github.com/selcukguler0/instagram-clone/blob/master/readme-screenshots/2.png?raw=true)
+![Screenshot](https://github.com/selcukguler0/instagram-clone/blob/master/readme-screenshots/3.png?raw=true)
